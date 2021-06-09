@@ -1,0 +1,236 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.navbar {
+    background: #F8F9FA;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    line-height: 72px;
+}
+
+.navbar-nav {
+    font-size: 20px;
+}
+
+.navbar-nav-left {
+    margin-left: 30px;
+}
+
+.navbar-nav-right {
+    margin-right: 80px;
+}
+
+.nav-item {
+    margin-left: 50px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: center;
+}
+  
+table {
+border-collapse: collapse;
+width: 80%;
+}
+
+th, td {
+padding: 15px;
+}
+
+.heading {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    font-size: 23px;
+    margin-top: 50px;
+}
+
+th {
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-add {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 160px;
+    margin-bottom: 25px;
+}
+
+.add_data {
+    width: 100px;
+    font-size: 20px;
+}
+
+.lab-category-name, .lab-role-name {
+    margin: 20px 0;
+}
+
+.title {
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.title h3 {
+    font-weight: bold;
+}
+
+label {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-control {
+    padding: 5px 12px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.button {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.button-submit {
+    width: 130px;
+    height: 40px;
+}
+
+.alert-message {
+    display: flex;
+    justify-content: center;
+}
+
+.message-success {
+    width: 80%;
+    text-align: center;
+}
+
+.active {
+    color: red;
+}
+
+.next_disable , .previos_disble {
+    pointer-events: none;
+}
+.next_enable , .previos_enable {
+    pointer-events: unset;
+}
+
+.error {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: red;
+}
+
+.button-submit {
+    font-size: 17px;
+}
+
+.selected {
+    color: red !important;
+}
+
+.import {
+    width: 150px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.export {
+    width: 150px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+th, td {
+    vertical-align: middle;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 160px;
+    margin-bottom: 25px;
+}
+
+.input-search {
+    height: 42px;
+    width: 322px !important;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.button-search {
+    width: 100px;
+    font-size: 20px;
+}
