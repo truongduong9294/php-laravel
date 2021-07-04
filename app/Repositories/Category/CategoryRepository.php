@@ -23,4 +23,9 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
                ->join('products','categories.id', '=' ,'products.category_id')
                ->pluck('categories.id');
     }
+
+    public function listCate()
+    {
+        return DB::table('categories')->orderBy('id', 'desc')->get();
+    }
 }

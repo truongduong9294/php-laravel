@@ -41,9 +41,13 @@
                                 <label>Price</label>
                                 <input type="text" class="form-control" name="price" placeholder="Price" value="{{old('price')}}">
                             </div>
+                            <div class="form-group">
+                                <label>Stock</label>
+                                <input type="text" class="form-control" name="stock" placeholder="Stock" value="{{old('stock')}}">
+                            </div>
                             <div class="button">
-                                <button class="btn btn-primary button-submit">Add</button>
                                 <a class="btn btn-primary button-submit" href="{{ route('product.list') }}">Back</a>
+                                <button class="btn btn-primary button-submit">Add</button>
                             </div>
                         </form>
                     </div>

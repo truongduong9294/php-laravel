@@ -8,4 +8,6 @@ interface CategoryRepositoryInterface extends RepositoryInterface
     public function getList();
 
     public function checkProduct();
+
+    public function listCate();
 }

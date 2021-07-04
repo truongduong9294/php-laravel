@@ -41,10 +41,14 @@
                                 <label>Price</label>
                                 <input type="text" class="form-control" name="price" placeholder="Price" value="{{old('price', $product->price)}}">
                             </div>
+                            <div class="form-group">
+                                <label>Stock</label>
+                                <input type="text" class="form-control" name="stock" placeholder="Stock" value="{{old('stock', $product->stock)}}">
+                            </div>
                             <input type="hidden" name="current_page" id="current_page" value="{{ $currentPage }}" />
                             <div class="button">
-                                <button class="btn btn-primary button-submit">Edit</button>
                                 <a class="btn btn-primary button-submit" href="{{ route('product.list') }}">Back</a>
+                                <button class="btn btn-primary button-submit">Edit</button>
                             </div>
                         </form>
                     </div>

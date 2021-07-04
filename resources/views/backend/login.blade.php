@@ -1,57 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-3 col-md-offset-1">
-                <div class="login" style="text-align: center">
-                    <h3>Login</h3>
-                </div>
-                @if(session()->has('message'))  
-                    <div class="alert-message">
-                        <div class="alert alert-danger message-message">
-                            {{ session()->get('message') }}
+<html>    
+    <head>
+        <title>My Awesome Login Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('backend/css/main.css') }}">
+    </head>
+    <body>
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
                         </div>
                     </div>
-                @endif
-                @if(session()->has('success'))  
-                <div class="alert-message">
-                        <div class="alert alert-success message-success">
-                            {{ session()->get('success') }}
+                    <div class="form_container">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if(session()->has('message'))  
+                            <div class="alert-message">
+                                <div class="alert alert-danger message-message">
+                                    {{ session()->get('message') }}
+                                </div>
+                            </div>
+                        @endif
+                        @if(session()->has('success'))  
+                        <div class="alert-message">
+                                <div class="alert alert-success message-success">
+                                    {{ session()->get('success') }}
+                                </div>
+                            </div>
+                        @endif
+                        <form action="{{ route('user.login.process') }}" method="post">
+                            @csrf
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" name="user_name" class="form-control input_user" placeholder="User name">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" name="password" class="form-control input_pass" value="" placeholder="Password">
+                            </div>
+                            {{-- <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                </div>
+                            </div> --}}
+                            <div class="d-flex justify-content-center mt-3 login_container">
+                                <button class="btn login_btn">Login</button>
+                            </div>
+                        </form>
+                    </div>
+            
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center links">
+                            Don't have an account? <a href=" {{ route('user.register') }} " class="ml-2">Sign Up</a>
+                        </div>
+                        <div class="d-flex justify-content-center links">
+                            <a href="#">Forgot your password?</a>
                         </div>
                     </div>
-                @endif
-                <form action="{{ route('user.login.process') }}" method="post">
-                    @csrf
-                    <div class="form-group">
-                        <label>User Name</label>
-                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                    </div>
-                    <div class="button_submit" style="text-align: center">
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-                <div>
-                    <a href="{{ route('forgot') }}">Forgot Password?</a>
-                </div>
-                <div>
-                    <a href="{{ route('user.register') }}">Register</a>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use DB;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +34,16 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\User\UserRepositoryInterface::class,
             \App\Repositories\User\UserRepository::class,
         );
+
+        $this->app->singleton(
+            \App\Repositories\Order\OrderRepositoryInterface::class,
+            \App\Repositories\Order\OrderRepository::class,
+        );
+
+        $this->app->singleton(
+            \App\Repositories\OrderDetail\OrderDetailRepositoryInterface::class,
+            \App\Repositories\OrderDetail\OrderDetailRepository::class,
+        );
     }
 
     /**
@@ -41,6 +53,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $categories = DB::table('categories')->get();
+        View::share('categories',$categories);  
     }
 }

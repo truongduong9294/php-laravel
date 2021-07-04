@@ -50,8 +50,8 @@
                                 </select>
                             </div>
                             <div class="button">
-                                <button class="btn btn-primary button-submit">Add</button>
                                 <a class="btn btn-primary button-submit" href="{{ route('user.list') }}">Back</a>
+                                <button class="btn btn-primary button-submit">Add</button>
                             </div>
                         </form>
                     </div>

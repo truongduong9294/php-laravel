@@ -3,18 +3,20 @@
     <div class="heading">
         <h3>List Product</h3>
     </div>
-    <div class="btn-add">
-        <a href="{{ route('product.export') }}" class="btn btn-primary export">Export Excel</a>
-        <a href="{{ route('product.import') }}" class="btn btn-primary import">Import Excel</a>
-        <a class="btn btn-primary add_data" href="{{ route('product.create') }}">Add</a>
-    </div>
-    <div class="search">
-        <form class="form-inline" action="{{ route('product.list') }}" method="get">
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control input-search" name="search" id="search" placeholder="Enter Product Name">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2 button-search">Search</button>
-        </form>
+    <div class="function">
+        <div class="search">
+            <form class="form-inline" action="{{ route('product.list') }}" method="get">
+                <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control input-search" name="search" id="search" placeholder="Enter Product Name">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 button-search">Search</button>
+            </form>
+        </div>
+        <div class="btn-add">
+            <a href="{{ route('product.export') }}" class="btn btn-primary export">Export Excel</a>
+            <a href="{{ route('product.import') }}" class="btn btn-primary import">Import Excel</a>
+            <a class="btn btn-primary add_data" href="{{ route('product.create') }}">Add</a>
+        </div>
     </div>
     @if(session()->has('success'))
         <div class="alert-message">

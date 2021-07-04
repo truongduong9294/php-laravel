@@ -53,8 +53,8 @@
                             <input type="hidden" name="user[email]" value="{{ $user->email }}">
                             <input type="hidden" name="current_page" id="current_page" value="{{ $currentPage }}" />
                             <div class="button">
-                                <button class="btn btn-primary button-submit">Edit</button>
                                 <a class="btn btn-primary button-submit" href="{{ route('user.list') }}">Back</a>
+                                <button class="btn btn-primary button-submit">Edit</button>
                             </div>
                         </form>
                     </div>

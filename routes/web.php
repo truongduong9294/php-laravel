@@ -5,7 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checklogin'], function () {
     Route::post('/resetprocess', [UserController::class, 'resetProcess'])->name('reset.process');
     Route::get('/register', [UserController::class, 'register'])->name('user.register');
     Route::post('/registerprocess', [UserController::class, 'registerProcess'])->name('user.register.process');
+
+    Route::get('/home', [HomeController::class, 'home'])->name('home');
+    // Route::get('/searchproduct', [HomeController::class, 'search'])->name('search.product');
+    Route::get('/showproduct/{id}', [HomeController::class, 'show'])->name('show.product');
+    Route::get('/addcart/{id}', [HomeController::class, 'addToCart'])->name('addcart');
+    Route::get('/viewcart', [HomeController::class, 'viewCart'])->name('view.cart');
+    Route::get('/updatecart', [HomeController::class, 'updateCart'])->name('update.cart');
+    Route::get('/deletecart', [HomeController::class, 'deleteCart'])->name('delete.cart');
+    Route::get('/searchproduct', [HomeController::class, 'searchProduct'])->name('search.product');
+    Route::post('/userlogin', [AuthController::class, 'login'])->name('auth.login');
+    Route::get('/userlogout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::post('/userregister', [AuthController::class, 'register'])->name('auth.register');
+    Route::get('/insertcart', [HomeController::class, 'insertCard'])->name('insert.card');
+    Route::get('/createpdf', [HomeController::class, 'CreatePdf'])->name('checkout');
+
+    Route::post('/loadmore', [HomeController::class, 'loadData'])->name('loadmore.load_data');

@@ -1,0 +1,45 @@
+.pagination_user {
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.active {
+    color: red;
+}
+
+.selected {
+    color: red;
+}
+
+.next_disable , .previos_disble {
+    pointer-events: none;
+}
+.next_enable , .previos_enable {
+    pointer-events: unset;
+}
+
+.button_fillter {
+    width: 130px;
+    background: deeppink;
+    margin-bottom: 20px;
+}
+
+.badge {
+    color: red;
+    font-size: 15px !important;
+}
+
+.discount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price_old {
+    text-decoration: line-through;
+}
+
+.load_more {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}

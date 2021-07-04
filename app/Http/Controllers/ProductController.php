@@ -71,6 +71,7 @@ class ProductController extends Controller
         $arrayImage =  explode( '.', $image->getClientOriginalName());
         $product['image'] = $arrayImage[0].'-'.time().'.'.$arrayImage[1];
         $product['price'] = $request->get('price');
+        $product['stock'] = $request->get('stock');
         $product = $this->productRepo->create($product);
         if ($product) {
             $image->move(public_path('uploads'), $product['image']);
@@ -110,6 +111,7 @@ class ProductController extends Controller
         $arrayImage =  explode( '.', $image->getClientOriginalName());
         $product['image'] = $arrayImage[0].'-'.time().'.'.$arrayImage[1];
         $product['price'] = $request->get('price');
+        $product['stock'] = $request->get('stock');
         $productOld = $this->productRepo->find($id);
         if ($productOld) {
             $imagePath = public_path().'\uploads\\'.$productOld->image;
