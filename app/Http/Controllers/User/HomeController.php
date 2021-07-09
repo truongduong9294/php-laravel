@@ -30,6 +30,11 @@ class HomeController extends Controller
         $this->detailRepo = $detailRepo;
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function home(Request $request)
     {
         $grandTotal = 0;
@@ -40,6 +45,11 @@ class HomeController extends Controller
         return view('frontend.pages.home', compact('products', 'fillter', 'search', 'saleProducts'));
     }
 
+    /**
+     * Display a object of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         if(!isset($request->search)) {
@@ -51,6 +61,12 @@ class HomeController extends Controller
         return view('frontend.pages.show', compact('product', 'products', 'categories'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function addToCart(Request $request, $id)
     {
         $product = $this->productRepo->find($id);
@@ -110,6 +126,11 @@ class HomeController extends Controller
         return redirect()->route('home');
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function viewCart()
     {
         $cart = [];
@@ -125,6 +146,13 @@ class HomeController extends Controller
         return view('frontend.pages.cart', compact('categories', 'cart', 'grandTotal'));
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  
+     * @return \Illuminate\Http\Response
+     */
     public function updateCart(Request $request)
     {
         $cart = Session::get('cart');
@@ -147,6 +175,12 @@ class HomeController extends Controller
         echo json_encode($output);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  
+     * @return \Illuminate\Http\Response
+     */
     public function deleteCart(Request $request)
     {
         $grandTotal = 0;
@@ -166,7 +200,8 @@ class HomeController extends Controller
         echo json_encode($output);
     }
 
-    public function insertCard() {
+    public function insertCard() 
+    {
         $grandTotal = 0;
         $orderDetail = array();
         if (Session::has('cart')) {
@@ -202,6 +237,11 @@ class HomeController extends Controller
         }
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function loadData(Request $request)
     {
         if($request->ajax()) {

@@ -57,7 +57,6 @@
                 <div class="col-lg-12">
                     <div class="shopping-box col-12 d-flex">
                         {{-- <input value="Update Cart" type="submit"> --}}
-                        <a class="ml-auto btn hvr-hover" href="{{ route('insert.card') }}">Update Cart</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +71,7 @@
                         </div>
                         <hr> </div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                <div class="col-12 d-flex shopping-box"><a href="{{ route('insert.card') }}" class="ml-auto btn hvr-hover">Checkout</a> </div>
             </div>
         </div>
     </div>
